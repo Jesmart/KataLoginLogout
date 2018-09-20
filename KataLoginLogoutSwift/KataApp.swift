@@ -26,6 +26,10 @@ class KataApp {
         return Int(clock.now.timeIntervalSince1970) % 2 == 0
     }
     
+    func validate(user: String) -> Bool {
+        
+        return !user.contains(".") && !user.contains(",") && !user.contains(";")
+    }
 }
 
 class Clock {

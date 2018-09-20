@@ -23,9 +23,26 @@ class ViewController: UIViewController {
             return
         }
         
-        if  kataApp.validate(user: user, password: pass) {
-            doLogin()
+        if kataApp.validate(user: user) {
+            
+            if  kataApp.validate(user: user, password: pass) {
+                doLogin()
+            } else {
+                let alert = UIAlertController(title: "Login", message: "Invalid credentials", preferredStyle: .alert)
+                let action = UIAlertAction(title: "Aceptar", style: .default, handler: nil)
+                alert.addAction(action)
+                present(alert, animated: true, completion: nil)
+            }
+            
+        } else {
+            
+            let alert = UIAlertController(title: "Login", message: "Invalid user", preferredStyle: .alert)
+            let action = UIAlertAction(title: "Aceptar", style: .default, handler: nil)
+            alert.addAction(action)
+            present(alert, animated: true, completion: nil)
+            
         }
+        
     }
     
     @IBAction func logoutAction(_ sender: Any) {
@@ -63,3 +80,6 @@ class ViewController: UIViewController {
     }
     
 }
+
+
+// User . , ;

@@ -89,6 +89,49 @@ class KataAppTests: XCTestCase {
         XCTAssertTrue(result == true)
     }
     
+    func test_givenUserWithoutDotsCommasAndSemicolons_whenICallValidateUser_thenReturnTrue() {
+        
+        // given
+        
+        // when
+        let result = sut.validate(user: "admin")
+        
+        // then
+        XCTAssertTrue(result == true)
+    }
+    
+    func test_givenUserWithDotAndWithoutCommasAndSemicolons_whenICallValidateUser_thenReturnFalse() {
+        
+        // given
+        
+        // when
+        let result = sut.validate(user: "admin.")
+        
+        // then
+        XCTAssertTrue(result == false)
+    }
+    
+    func test_givenUserWithCommaAndWithoutDotsAndSemicolons_whenICallValidateUser_thenReturnFalse() {
+        
+        // given
+        
+        // when
+        let result = sut.validate(user: "ad,min")
+        
+        // then
+        XCTAssertTrue(result == false)
+    }
+    
+    func test_givenUserWithSemicolonAndWithoutDotsAndCommas_whenICallValidateUser_thenReturnFalse() {
+        
+        // given
+        
+        // when
+        let result = sut.validate(user: ";admin")
+        
+        // then
+        XCTAssertTrue(result == false)
+    }
 }
 
 class FakeClock: Clock {
