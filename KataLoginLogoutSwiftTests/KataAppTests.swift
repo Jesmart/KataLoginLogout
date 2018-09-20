@@ -12,11 +12,12 @@ import XCTest
 class KataAppTests: XCTestCase {
     
     var sut: KataApp!
+    let fakeClock = FakeClock()
     
     override func setUp() {
         super.setUp()
 
-        sut = KataApp()
+        sut = KataApp(clock: fakeClock)
     }
     
     func test_givenAdminAdmin_whenICallValidate_thenReturnTrue() {
@@ -63,4 +64,38 @@ class KataAppTests: XCTestCase {
         XCTAssertTrue(result == false)
     }
     
+    
+    func test_givenTimestampOdd_whenICallValidLogout_thenReturnFalse() {
+        
+        // given
+        fakeClock.dummyDate = Date(timeIntervalSince1970: 3)
+        
+        // when
+        let result = sut.validLogout()
+
+        // then
+        XCTAssertTrue(result == false)
+    }
+    
+    func test_givenTimestampEven_whenICallValidLogout_thenReturnTrue() {
+        
+        // given
+        fakeClock.dummyDate = Date(timeIntervalSince1970: 2)
+
+        // when
+        let result = sut.validLogout()
+        
+        // then
+        XCTAssertTrue(result == true)
+    }
+    
+}
+
+class FakeClock: Clock {
+    
+    var dummyDate: Date!
+    
+    override var now: Date {
+        return dummyDate
+    }
 }

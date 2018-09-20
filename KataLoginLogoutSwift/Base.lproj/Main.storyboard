@@ -43,9 +43,17 @@
                                     <action selector="loginAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8V9-ao-Dkz"/>
                                 </connections>
                             </button>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jOp-AQ-ECz">
+                                <rect key="frame" x="163" y="328" width="48" height="30"/>
+                                <state key="normal" title="Logout"/>
+                                <connections>
+                                    <action selector="logoutAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fmV-ri-rfq"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="jOp-AQ-ECz" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="4rW-4G-Jld"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Aur-cq-YTm" secondAttribute="trailing" constant="16" id="Lmy-x9-Vki"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Klr-Wc-JYJ" secondAttribute="trailing" constant="16" id="Mn5-6A-RtT"/>
                             <constraint firstItem="Klr-Wc-JYJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="OGG-Nc-6eN"/>
@@ -54,11 +62,13 @@
                             <constraint firstItem="MoY-2f-A6e" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="cSu-si-FJR"/>
                             <constraint firstItem="Aur-cq-YTm" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="ciA-Ki-0a9"/>
                             <constraint firstItem="MoY-2f-A6e" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="lkH-nk-CPB"/>
+                            <constraint firstItem="jOp-AQ-ECz" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="yYo-wO-YUz"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="loginButton" destination="MoY-2f-A6e" id="sTz-6k-loS"/>
+                        <outlet property="logoutButton" destination="jOp-AQ-ECz" id="u3T-Qu-VD7"/>
                         <outlet property="passTextfield" destination="Klr-Wc-JYJ" id="c3v-K4-GEq"/>
                         <outlet property="userTextfield" destination="Aur-cq-YTm" id="7bD-UW-rqe"/>
                     </connections>
