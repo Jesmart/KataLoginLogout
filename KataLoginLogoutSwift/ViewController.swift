@@ -14,16 +14,19 @@ class ViewController: UIViewController {
     @IBOutlet weak var passTextfield: UITextField!
     @IBOutlet weak var loginButton: UIButton!
     
+    let kataApp = KataApp()
+    
     @IBAction func loginAction(_ sender: Any) {
         
-        if userTextfield.text == "admin" && passTextfield.text == "admin" {
+        guard let user = userTextfield.text, let pass = passTextfield.text else {
+            return
+        }
+        
+        if  kataApp.validate(user: user, password: pass) {
             
             let hola = UIAlertController(title: "Login", message: "Success", preferredStyle: .alert)
             present(hola, animated: true, completion: nil)
-            
         }
-        
     }
-    
 }
 
