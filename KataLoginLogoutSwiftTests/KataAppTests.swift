@@ -132,6 +132,17 @@ class KataAppTests: XCTestCase {
         // then
         XCTAssertTrue(result == false)
     }
+    
+    func test_givenDifferentThanAdminButWithoutInvalidCharacters_whenICallValidateUser_thenReturnTrue() {
+        
+        // given
+        
+        // when
+        let result = sut.validate(user: "8888")
+        
+        // then
+        XCTAssertTrue(result == true)
+    }
 }
 
 class FakeClock: Clock {
