@@ -52,4 +52,15 @@ class KataAppTests: XCTestCase {
         XCTAssertTrue(result == false)
     }
     
+    func test_givenXXXAndXXX_whenICallValidate_thenReturnTrue() {
+        
+        // given
+        
+        // when
+        let result = sut.validate(user: "XXX", password: "XXX")
+        
+        // then
+        XCTAssertTrue(result == false)
+    }
+    
 }
