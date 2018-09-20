@@ -15,6 +15,8 @@
 		70E5C6E92153DBA300FF82F2 /* KataLoginLogoutSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70E5C6E82153DBA300FF82F2 /* KataLoginLogoutSwiftTests.swift */; };
 		70E5C6F42153E0A900FF82F2 /* KataApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70E5C6F32153E0A900FF82F2 /* KataApp.swift */; };
 		70E5C6F62153E19700FF82F2 /* KataAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70E5C6F52153E19700FF82F2 /* KataAppTests.swift */; };
+		70E5C6F82153F4B500FF82F2 /* KataPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70E5C6F72153F4B500FF82F2 /* KataPresenter.swift */; };
+		70E5C6FA2153F7FF00FF82F2 /* KataPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70E5C6F92153F7FF00FF82F2 /* KataPresenterTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +42,8 @@
 		70E5C6EA2153DBA300FF82F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		70E5C6F32153E0A900FF82F2 /* KataApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KataApp.swift; sourceTree = "<group>"; };
 		70E5C6F52153E19700FF82F2 /* KataAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KataAppTests.swift; sourceTree = "<group>"; };
+		70E5C6F72153F4B500FF82F2 /* KataPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KataPresenter.swift; sourceTree = "<group>"; };
+		70E5C6F92153F7FF00FF82F2 /* KataPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KataPresenterTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +92,7 @@
 				70E5C6DC2153DBA300FF82F2 /* LaunchScreen.storyboard */,
 				70E5C6DF2153DBA300FF82F2 /* Info.plist */,
 				70E5C6F32153E0A900FF82F2 /* KataApp.swift */,
+				70E5C6F72153F4B500FF82F2 /* KataPresenter.swift */,
 			);
 			path = KataLoginLogoutSwift;
 			sourceTree = "<group>";
@@ -98,6 +103,7 @@
 				70E5C6E82153DBA300FF82F2 /* KataLoginLogoutSwiftTests.swift */,
 				70E5C6EA2153DBA300FF82F2 /* Info.plist */,
 				70E5C6F52153E19700FF82F2 /* KataAppTests.swift */,
+				70E5C6F92153F7FF00FF82F2 /* KataPresenterTests.swift */,
 			);
 			path = KataLoginLogoutSwiftTests;
 			sourceTree = "<group>";
@@ -206,6 +212,7 @@
 				70E5C6D62153DBA300FF82F2 /* ViewController.swift in Sources */,
 				70E5C6F42153E0A900FF82F2 /* KataApp.swift in Sources */,
 				70E5C6D42153DBA300FF82F2 /* AppDelegate.swift in Sources */,
+				70E5C6F82153F4B500FF82F2 /* KataPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -215,6 +222,7 @@
 			files = (
 				70E5C6F62153E19700FF82F2 /* KataAppTests.swift in Sources */,
 				70E5C6E92153DBA300FF82F2 /* KataLoginLogoutSwiftTests.swift in Sources */,
+				70E5C6FA2153F7FF00FF82F2 /* KataPresenterTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

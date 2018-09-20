@@ -16,70 +16,62 @@ class ViewController: UIViewController {
     @IBOutlet weak var logoutButton: UIButton!
     
     let kataApp = KataApp(clock: Clock())
+    var presenter: KataPresenter!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        presenter = KataPresenter(view: self, kataApp: kataApp)
+    }
     
     @IBAction func loginAction(_ sender: Any) {
         
-        guard let user = userTextfield.text, let pass = passTextfield.text else {
-            return
-        }
-        
-        if kataApp.validate(user: user) {
-            
-            if  kataApp.validate(user: user, password: pass) {
-                doLogin()
-            } else {
-                let alert = UIAlertController(title: "Login", message: "Invalid credentials", preferredStyle: .alert)
-                let action = UIAlertAction(title: "Aceptar", style: .default, handler: nil)
-                alert.addAction(action)
-                present(alert, animated: true, completion: nil)
-            }
-            
-        } else {
-            
-            let alert = UIAlertController(title: "Login", message: "Invalid user", preferredStyle: .alert)
-            let action = UIAlertAction(title: "Aceptar", style: .default, handler: nil)
-            alert.addAction(action)
-            present(alert, animated: true, completion: nil)
-            
-        }
-        
+        let user = userTextfield.text ?? ""
+        let pass = passTextfield.text ?? ""
+
+        presenter.didTapLoginButton(user: user, password: pass)
     }
     
     @IBAction func logoutAction(_ sender: Any) {
         
-        if kataApp.validLogout() {
-            doLogout()
-        } else {
-            
-            let alert = UIAlertController(title: "Logout", message: "Error", preferredStyle: .alert)
-            let action = UIAlertAction(title: "Aceptar", style: .default, handler: nil)
-            alert.addAction(action)
-            present(alert, animated: true, completion: nil)
+        presenter.didTapLogoutButton()
+    }
+}
+
+extension ViewController: View {
+    
+    func showError(title: String) {
         
-        }
-        
+        let alert = UIAlertController(title: "Status", message: title, preferredStyle: .alert)
+        let action = UIAlertAction(title: "Aceptar", style: .default, handler: nil)
+        alert.addAction(action)
+        present(alert, animated: true, completion: nil)
     }
     
-    private func doLogin(){
-        
-        userTextfield.isHidden = true
-        passTextfield.isHidden = true
-        loginButton.isHidden = true
-        logoutButton.isHidden = false
-    }
-    
-    private func doLogout() {
+    func showLoginForm() {
         
         userTextfield.text = ""
         passTextfield.text = ""
-
-        logoutButton.isHidden = true
+        
         userTextfield.isHidden = false
         passTextfield.isHidden = false
         loginButton.isHidden = false
     }
     
+    func hideLoginForm() {
+        
+        userTextfield.isHidden = true
+        passTextfield.isHidden = true
+        loginButton.isHidden = true
+    }
+    
+    func showLogoutForm() {
+        
+        logoutButton.isHidden = false
+    }
+    
+    func hideLogoutForm() {
+        
+        logoutButton.isHidden = true
+    }
 }
-
-
-// User . , ;
