@@ -9,17 +9,21 @@
 import UIKit
 
 class ViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+    
+    @IBOutlet weak var userTextfield: UITextField!
+    @IBOutlet weak var passTextfield: UITextField!
+    @IBOutlet weak var loginButton: UIButton!
+    
+    @IBAction func loginAction(_ sender: Any) {
+        
+        if userTextfield.text == "admin" && passTextfield.text == "admin" {
+            
+            let hola = UIAlertController(title: "Login", message: "Success", preferredStyle: .alert)
+            present(hola, animated: true, completion: nil)
+            
+        }
+        
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-
+    
 }
 
