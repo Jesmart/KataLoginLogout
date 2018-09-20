@@ -1,0 +1,6 @@
+version: "Apple Swift version 4.1.2 (swiftlang-902.0.54 clang-902.0.39.2)"
+options: "204f76f12b414271a4f16065d2a35409"
+build_time: [1537451356, 164019000]
+inputs:
+  "/Users/jesus.martinez/Documents/MobileTesting/KataLoginLogoutSwift/KataLoginLogoutSwift/ViewController.swift": [9223372036, 854775807]
+  "/Users/jesus.martinez/Documents/MobileTesting/KataLoginLogoutSwift/KataLoginLogoutSwift/AppDelegate.swift": [9223372036, 854775807]
